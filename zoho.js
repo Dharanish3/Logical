@@ -1,5 +1,5 @@
 //  Pattern Sum (Cross)
-
+// 1. X - Pyramid Pattern
 function printWordWithOddLetters(word) {
     const length = word.length;
 
@@ -15,11 +15,11 @@ function printWordWithOddLetters(word) {
         console.log(line);
     }
 }
-const inputWord = "Dharanish";
+const inputWord = "geeksforgeeks";
 printWordWithOddLetters(inputWord);
 
 
-
+// 1. X - Pyramid Pattern in c
 /* #include <stdio.h>
 #include <string.h>
 
@@ -50,8 +50,8 @@ int main() {
 
 
 
+// 2. Sorting Sum - Ascending Order
 
-// Sorting Sum
 function alternateSort(arr) {
     // Sort the array in ascending order
     arr.sort((a, b) => a - b);
@@ -83,7 +83,7 @@ console.log("Output Array after alternate sorting: " + outputArray);
 
 
 
-
+// 2. Sorting Sum - Ascending Order in c
 /* #include <stdio.h>
 
 void alternateSort(int arr[], int n) {
@@ -139,4 +139,261 @@ int main() {
  */
 
 
+// 3. Output of the Given input
+function expandString(input) {
+    let output = '';
+    let currentChar = '';
+    
+    for (let i = 0; i < input.length; i++) {
+      const char = input[i];
+      
+      if (isNaN(char)) {
+        currentChar = char;
+      } else {
+        output += currentChar.repeat(parseInt(char, 10));
+      }
+    }
+    
+    return output;
+  }
+  
 
+  const input = 'a1b9';
+  const result = expandString(input);
+  console.log(result);
+
+
+  
+// 3. Output of the Given input in C
+/* 
+  #include <stdio.h>
+#include <ctype.h>
+
+void expandString(char *input) {
+    char currentChar = '\0';
+    
+    while (*input) {
+        if (isdigit(*input)) {
+            int repeatCount = *input - '0';
+            for (int i = 0; i < repeatCount; i++) {
+                putchar(currentChar);
+            }
+        } else {
+            currentChar = *input;
+            putchar(currentChar);
+        }
+        
+        input++;
+    }
+}
+
+int main() {
+    char input[] = "a1b10";
+    expandString(input);
+    
+    return 0;
+}
+ */
+
+
+
+
+// 4.  Find if a String2 is substring of String1.
+function findSubstringIndex(string1, string2) {
+    const index = string1.indexOf(string2);
+    return index !== -1 ? index : -1;
+  }
+  
+  // Example usage:
+  const string1 = "test123string";
+  const string2 = "123";
+  const results = findSubstringIndex(string1, string2);
+  console.log(results);
+  
+
+// 4.  Find if a String2 is substring of String1.in C
+/*   #include <stdio.h>
+#include <string.h>
+
+int findSubstringIndex(const char *string1, const char *string2) {
+    const char *result = strstr(string1, string2);
+
+    if (result != NULL) {
+        return result - string1;
+    } else {
+        return -1;
+    }
+}
+
+int main() {
+    const char *string1 = "test123string";
+    const char *string2 = "123";
+
+    int result = findSubstringIndex(string1, string2);
+
+    printf("Output: %d\n", result);
+
+    return 0;
+} */
+
+
+// 5. Given two sorted arrays, merge them such that the elements are not repeated
+function mergeSortedArrays(arr1, arr2) {
+    let mergedArray = [];
+    let i = 0;
+    let j = 0;
+  
+    while (i < arr1.length && j < arr2.length) {
+      if (arr1[i] < arr2[j]) {
+        mergedArray.push(arr1[i]);
+        i++;
+      } else if (arr1[i] > arr2[j]) {
+        mergedArray.push(arr2[j]);
+        j++;
+      } else {
+        // If the elements are equal, add one of them and move both pointers
+        mergedArray.push(arr1[i]);
+        i++;
+        j++;
+      }
+    }
+  
+    // Add remaining elements from both arrays if any
+    while (i < arr1.length) {
+      mergedArray.push(arr1[i]);
+      i++;
+    }
+  
+    while (j < arr2.length) {
+      mergedArray.push(arr2[j]);
+      j++;
+    }
+  
+    return mergedArray;
+  }
+  
+  // Example usage:
+  const array1 = [2, 4, 5, 6, 7, 9, 10, 13];
+  const array2 = [2, 3, 4, 5, 6, 7, 8, 9, 11, 15];
+  
+  const mergedArray = mergeSortedArrays(array1, array2);
+  console.log("Merged array:", mergedArray);
+  
+
+
+  // 5. Given two sorted arrays, merge them such that the elements are not repeated in C
+
+  /* #include <stdio.h>
+
+void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2, int mergedArray[]) {
+    int i = 0, j = 0, k = 0;
+
+    while (i < size1 && j < size2) {
+        if (arr1[i] < arr2[j]) {
+            mergedArray[k++] = arr1[i++];
+        } else if (arr1[i] > arr2[j]) {
+            mergedArray[k++] = arr2[j++];
+        } else {
+            // If the elements are equal, add one of them and move both pointers
+            mergedArray[k++] = arr1[i++];
+            j++;
+        }
+    }
+
+    // Add remaining elements from both arrays if any
+    while (i < size1) {
+        mergedArray[k++] = arr1[i++];
+    }
+
+    while (j < size2) {
+        mergedArray[k++] = arr2[j++];
+    }
+}
+
+int main() {
+    int array1[] = {2, 4, 5, 6, 7, 9, 10, 13};
+    int size1 = sizeof(array1) / sizeof(array1[0]);
+
+    int array2[] = {2, 3, 4, 5, 6, 7, 8, 9, 11, 15};
+    int size2 = sizeof(array2) / sizeof(array2[0]);
+
+    // Assuming the merged array won't exceed the sum of sizes of both arrays
+    int mergedArray[size1 + size2];
+
+    mergeSortedArrays(array1, size1, array2, size2, mergedArray);
+
+    printf("Merged array: ");
+    for (int i = 0; i < size1 + size2; i++) {
+        printf("%d ", mergedArray[i]);
+    }
+
+    return 0;
+}
+ */
+
+
+
+// 6. Using Recursion reverse the string such as
+function reverseString(str) {
+    if (str === "") {
+        return str;
+    } else {
+        return reverseString(str.substr(1)) + str[0];
+    }
+}
+
+// Example usage:
+const input1 = "one two three";
+console.log("Input: " + input1);
+console.log("Output: " + reverseString(input1));
+
+const input2 = "I love india";
+console.log("\nInput: " + input2);
+console.log("Output: " + reverseString(input2));
+
+
+
+// 6. Using Recursion reverse the string such as C
+/* #include <stdio.h>
+#include <string.h>
+
+void reverseString(char str[], int start, int end) {
+    if (start >= end) {
+        return;
+    }
+
+    // Swap characters at start and end indices
+    char temp = str[start];
+    str[start] = str[end];
+    str[end] = temp;
+
+    // Recursive call with updated indices
+    reverseString(str, start + 1, end - 1);
+}
+
+int main() {
+    char input1[] = "one two three";
+    printf("Input: %s\n", input1);
+
+    // Find the length of the string
+    int length1 = strlen(input1);
+
+    // Reverse the string using recursion
+    reverseString(input1, 0, length1 - 1);
+
+    printf("Output: %s\n", input1);
+
+    char input2[] = "I love india";
+    printf("\nInput: %s\n", input2);
+
+    // Find the length of the string
+    int length2 = strlen(input2);
+
+    // Reverse the string using recursion
+    reverseString(input2, 0, length2 - 1);
+
+    printf("Output: %s\n", input2);
+
+    return 0;
+}
+ */
