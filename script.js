@@ -30,10 +30,20 @@ console.log(dup([67 , 45 , 67 , 23 , 89, 23]))
 // Type 1
 for (var i = 1; i <= 6; i++) {
     for (var j = 1; j <= i; j++) {
-      document.write("* " + "&nbsp;&nbsp");
+      document.write("# " + "&nbsp;&nbsp");
     }
     document.write("<br>");
   }
+  
+// Output :
+/*  #   
+#   #   
+#   #   #   
+#   #   #   #   
+#   #   #   #   #   
+#   #   #   #   #   #   */
+
+
 
 for (var i = 6; i >= 1; i--) {
     for (var j = 1; j <= i; j++) {
@@ -42,9 +52,19 @@ for (var i = 6; i >= 1; i--) {
     document.write("<br>");
   }
 
+// Output : 
+ /*  #   #   #   #   #   #   
+  #   #   #   #   #   
+  #   #   #   #   
+  #   #   #   
+  #   #   
+  #      */
+
+
   
+ 
 // 2.Pyramid
-  for (var i = 1; i <= 6; i++) {
+for (var i = 1; i <= 6; i++) {
     for (var k = 1; k <= 6-i; k++) {
       document.write("&nbsp;&nbsp");
     }
@@ -56,6 +76,7 @@ for (var i = 6; i >= 1; i--) {
 
 
 
+
 // 3.Type 2
   for (var i = 1; i <= 6; i++) {
     for (var j = 1; j <= i; j++) {
@@ -64,6 +85,8 @@ for (var i = 6; i >= 1; i--) {
     document.write("<br>");
   }
 
+  
+  
 
 //    3.Pyramid Full
   for (var i = 1; i <= 6; i++) {
