@@ -397,3 +397,20 @@ int main() {
     return 0;
 }
  */
+
+
+// Pyramid Pattern
+function pyramid (row){
+
+    for(var i = 1; i <= row; i++){
+        for(var j = 1; j<= row-i; j++){
+            document.write("&nbsp;&nbsp");
+        }
+        for (var k = 1; k < i; k++){
+            document.write("1" + "&nbsp;&nbsp ")
+        }
+        document.write("<br>");
+    }
+}
+
+pyramid(9)
