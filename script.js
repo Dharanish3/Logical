@@ -94,7 +94,7 @@ for (var i = 1; i <= 6; i++) {
       document.write("&nbsp;&nbsp");
     }
     for (var j = 1; j <= i; j++) {
-      document.write("* " + "&nbsp;&nbsp");
+      document.write(j + "&nbsp;&nbsp");
     }
     document.write("<br>");
   }
@@ -103,7 +103,7 @@ for (var i = 1; i <= 6; i++) {
       document.write("&nbsp;&nbsp");
     }
     for (var j = 1; j <= 6-i; j++) {
-      document.write("* " + "&nbsp;&nbsp");
+      document.write(j + "&nbsp;&nbsp");
     }
     document.write("<br>");
   }

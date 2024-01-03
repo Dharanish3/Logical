@@ -20,6 +20,7 @@ printWordWithOddLetters(inputWord);
 
 
 // 1. X - Pyramid Pattern in c
+
 /* #include <stdio.h>
 #include <string.h>
 
@@ -84,6 +85,7 @@ console.log("Output Array after alternate sorting: " + outputArray);
 
 
 // 2. Sorting Sum - Ascending Order in c
+
 /* #include <stdio.h>
 
 void alternateSort(int arr[], int n) {
@@ -407,10 +409,24 @@ function pyramid (row){
             document.write("&nbsp;&nbsp");
         }
         for (var k = 1; k < i; k++){
-            document.write("1" + "&nbsp;&nbsp ")
+            document.write(" * " + "&nbsp;&nbsp ")
         }
         document.write("<br>");
     }
 }
 
 pyramid(9)
+
+
+function pallindrome (str) {
+    let character = str.toLowercase().split("")
+    let pal = character.reverse()
+    if(pal === str){
+        console.log("It is a Pallindrome")
+    }else{
+        console.log("It is not a Pallindrome")
+    }
+}
+
+const val = "Dharanish"
+pallindrome(val)
