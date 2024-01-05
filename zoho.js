@@ -18,6 +18,38 @@ function printWordWithOddLetters(word) {
 const inputWord = "geeksforgeeks";
 printWordWithOddLetters(inputWord);
 
+// Python
+/* def print_geeks_pyramid(rows):
+    # Define the string to be printed
+    pattern = "geeks for geeks"
+    
+    # Initialize counter for the characters in the pattern
+    char_count = 0
+    
+    # Iterate through each row
+    for i in range(1, rows + 1):
+        # Print spaces for the left pyramid
+        for j in range(rows, i, -1):
+            print(" ", end="")
+        
+        # Print characters for the left pyramid
+        for k in range(1, i + 1):
+            print(pattern[char_count % len(pattern)], end="")
+            char_count += 1
+        
+        # Print characters for the right pyramid
+        for l in range(1, i):
+            print(pattern[char_count % len(pattern)], end="")
+            char_count += 1
+        
+        # Move to the next line for the next row
+        print()
+
+# Number of rows in the pyramid
+rows = 5
+
+# Call the function to print the pattern
+print_geeks_pyramid(rows) */
 
 // 1. X - Pyramid Pattern in c
 
